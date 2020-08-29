@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  geopandas:
+    build: .
+    image: gsv2020-geopandas-buffer:latest
+    environment:
+      - BUFFER_RADIUS_METERS=2000
+      - FILENAME=/in.geojson
+      - OUTPUT_FILENAME=/out.geojson
+    volumes:
+      - ./n52.geojson:/in.geojson

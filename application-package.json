@@ -1,0 +1,85 @@
+{
+  "processDescription": {
+    "process": {
+      "id": "org.n52.gsv2020.jupyter-buffer",
+      "title": "Calculation of a Geometry Buffer using Jupyter Notebook execution",
+      "description": "Calculation of a Geometry Buffer using Jupyter Notebook execution",
+      "version": "1.0.0",
+      "keywords": [
+        "GeoJSON",
+        "Buffer",
+        "Jupyter"
+      ],
+      "inputs": [
+        {
+          "id": "input",
+          "title": "GeoJSON geometry to buffer",
+          "description": "GeoJSON geometry to buffer",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "input": {
+            "formats": [
+              {
+                "mimeType": "application/geo+json",
+                "default": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "bufferRadiusMeters",
+          "title": "the band to be used for the near-infrared band",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "input": {
+            "literalDataDomains": [
+              {
+                "default": true,
+                "dataType": {
+                  "name": "integer"
+                },
+                "valueDefinition": [
+                  {
+                    "minimumValue": "1",
+                    "maximumValue": "50000",
+                    "rangeClosure": "closed"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "buffer",
+          "title": "The buffer applied to the geometry",
+          "output": {
+            "formats": [
+              {
+                "mimeType": "application/geo+json",
+                "default": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "jobControlOptions": [
+      "async-execute"
+    ],
+    "outputTransmission": [
+      "reference"
+    ]
+  },
+  "immediateDeployment": true,
+  "executionUnit": [
+    {
+      "unit": {
+        "type": "docker",
+        "image": "gsv2020-geopandas-buffer:latest"
+      }
+    }
+  ],
+  "deploymentProfileName": "http://www.opengis.net/profiles/eoc/dockerizedApplication"
+}

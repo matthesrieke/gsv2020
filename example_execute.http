@@ -1,0 +1,53 @@
+POST https://testbed.dev.52north.org/ades/rest/processes/org.n52.gsv2020.jupyter-buffer/jobs
+Accept: application/json
+Content-Type: application/json
+
+{
+   "inputs":[
+      {
+         "id":"input",
+         "input":{
+            "format":{
+               "mimeType":"application/vnd.geo+json"
+            },
+            "value":{
+               "inlineValue":{
+                  "type":"FeatureCollection",
+                  "features":[
+                     {
+                        "type":"Feature",
+                        "properties":{
+                           
+                        },
+                        "geometry":{
+                           "type":"Point",
+                           "coordinates":[
+                              7.652052640914917,
+                              51.93502810268587
+                           ]
+                        }
+                     }
+                  ]
+               }
+            }
+         }
+      },
+      {
+         "id":"bufferRadiusMeters",
+         "input":{
+            "value":15000
+         }
+      }
+   ],
+   "outputs":[
+      {
+         "id":"bufferedOutput",
+         "format":{
+            "mimeType":"application/vnd.geo+json"
+         },
+         "transmissionMode":"reference"
+      }
+   ],
+   "mode": "async",
+   "response": "document"
+}
