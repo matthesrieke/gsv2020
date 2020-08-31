@@ -4,8 +4,8 @@ services:
     build: .
     image: gsv2020-geopandas-buffer:latest
     environment:
-      - BUFFER_RADIUS_METERS=2000
-      - FILENAME=/in.geojson
-      - OUTPUT_FILENAME=/out.geojson
+      - INPUT_BUFFER_RADIUS_METERS=2000
+      - INPUT_INPUT=/in.geojson
+      - OUTPUT_BUFFERED_OUTPUT=/out.geojson
     volumes:
       - ./n52.geojson:/in.geojson

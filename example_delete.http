@@ -1,0 +1,3 @@
+DELETE https://testbed.dev.52north.org/ades/rest/processes/org.n52.gsv2020.jupyter-buffer
+Accept: application/json
+Content-Type: application/json
