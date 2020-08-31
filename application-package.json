@@ -20,7 +20,7 @@
           "input": {
             "formats": [
               {
-                "mimeType": "application/geo+json",
+                "mimeType": "application/vnd.geo+json",
                 "default": true
               }
             ]
@@ -28,7 +28,7 @@
         },
         {
           "id": "bufferRadiusMeters",
-          "title": "the band to be used for the near-infrared band",
+          "title": "the buffer radius in meters",
           "minOccurs": 0,
           "maxOccurs": 1,
           "input": {
@@ -52,12 +52,12 @@
       ],
       "outputs": [
         {
-          "id": "buffer",
+          "id": "bufferedOutput",
           "title": "The buffer applied to the geometry",
           "output": {
             "formats": [
               {
-                "mimeType": "application/geo+json",
+                "mimeType": "application/vnd.geo+json",
                 "default": true
               }
             ]
